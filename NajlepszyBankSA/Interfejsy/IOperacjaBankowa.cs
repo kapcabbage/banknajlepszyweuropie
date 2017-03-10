@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public class OperacjaBankowa
+    public interface IOperacjaBankowa
     {
-        public string Opis
-        {
-            get;
-        }
+        LogOperacji StworzLog();
 
-        
+        void Wykonaj();
     }
 }

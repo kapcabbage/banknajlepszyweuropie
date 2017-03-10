@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    interface iRachunek
+    public interface IRachunek
     {
 
     }

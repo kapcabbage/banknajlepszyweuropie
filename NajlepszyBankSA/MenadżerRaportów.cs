@@ -16,7 +16,7 @@ namespace NajlepszyBankSA
 
         public string WykonarRaportGeneralny()
         {
-            return string.Join("\n", _historia.Operacje);//dsads
+            return string.Join("\n", _historia.Operacje);
         }
     }
 }
