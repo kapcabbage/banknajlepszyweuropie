@@ -43,6 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="HistoriaOperacji.cs" />
+    <Compile Include="LogOperacji.cs" />
+    <Compile Include="MenadżerRaportów.cs" />
+    <Compile Include="OperacjaBankowa.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
