@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class KontoKlienta
+    public class KontoKlienta
     {
         private Osoba Klient { get; set; }
 

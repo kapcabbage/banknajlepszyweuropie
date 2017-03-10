@@ -1,2 +1,3 @@
 c:\users\student\documents\visual studio 2015\Projects\NajlepszyBankSA\NajlepszyBankSA\bin\Debug\NajlepszyBankSA.exe.config
 C:\Users\student\Source\Repos\banknajlepszyweuropie\NajlepszyBankSA\bin\Debug\NajlepszyBankSA.exe.config
+C:\Users\student\Source\Repos\fajnie\NajlepszyBankSA\bin\Debug\NajlepszyBankSA.exe.config
