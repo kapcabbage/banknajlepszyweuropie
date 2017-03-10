@@ -6,11 +6,17 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class Osoba
+    public class Osoba
     {
         private string Imie {get;set;}
 
         private string Nazwisko { get; set; }
 
+
+        public Osoba(string Imie, string Nazwisko)
+        {
+            this.Imie = Imie;
+            this.Nazwisko = Nazwisko;
+        }
     }
 }

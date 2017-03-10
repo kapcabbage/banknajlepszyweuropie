@@ -6,8 +6,19 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class Lokata
+    public class Lokata : Rachunek
     {
+        private decimal Oprocentowanie
+        {
+            get
+            {
+                return 2;
+            }
+        }
 
+        public Lokata() : base()
+        {
+
+        }
     }
 }

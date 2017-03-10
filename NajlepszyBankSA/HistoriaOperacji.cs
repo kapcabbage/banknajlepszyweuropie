@@ -21,5 +21,10 @@ namespace NajlepszyBankSA
                 _opeacje = value;
             }
         }
+
+        public HistoriaOperacji()
+        {
+            _opeacje = new List<LogOperacji>();
+        }
     }
 }

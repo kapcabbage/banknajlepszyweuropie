@@ -8,10 +8,12 @@ namespace NajlepszyBankSA
 {
     public class MechanizmOdsetkowy
     {
-        private decimal Odsetka { get
+        public decimal Odsetka { get
             {
                 return (decimal)0.02;
             } }
+
+
 
         
     }

@@ -11,5 +11,10 @@ namespace NajlepszyBankSA
         private decimal Debet { get; set; }
 
 
+        public RachunekBankowy() : base() 
+        {
+            this.Debet = 0;
+        }
+
     }
 }

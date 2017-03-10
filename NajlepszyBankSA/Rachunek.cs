@@ -17,5 +17,15 @@ namespace NajlepszyBankSA
         protected MechanizmOdsetkowy MechanizmOdsetkowy { get; set; }
 
         protected HistoriaOperacji Historia { get; set; }
+
+        public Rachunek()
+        {
+            this.Saldo = 0;
+            this.DataZalozenia = DateTime.Now;
+            this.MechanizmOdsetkowy = new MechanizmOdsetkowy();
+            this.Historia = new HistoriaOperacji();
+
+        }
+        
     }
 }

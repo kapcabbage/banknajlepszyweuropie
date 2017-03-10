@@ -8,6 +8,11 @@ namespace NajlepszyBankSA
 {
     public class Kredyt : Rachunek
     {
-        private decimal RachunekBankowy { get; set; }
+        private RachunekBankowy RachunekBankowy { get; set; }
+
+        public Kredyt(RachunekBankowy RachunekPowiazany) : base()
+        {
+            this.RachunekBankowy = RachunekPowiazany;
+        }
     }
 }
