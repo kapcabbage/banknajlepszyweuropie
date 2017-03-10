@@ -9,7 +9,5 @@ namespace NajlepszyBankSA
     public interface IOperacjaBankowa
     {
         LogOperacji StworzLog();
-
-        void Wykonaj();
     }
 }
