@@ -43,8 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bank.cs" />
+    <Compile Include="Interfejsy\iRachunek.cs" />
+    <Compile Include="Kredyt.cs" />
+    <Compile Include="Lokata.cs" />
+    <Compile Include="MechanizmOdsetkowy.cs" />
+    <Compile Include="Osoba.cs" />
+    <Compile Include="KontoKlienta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rachunek.cs" />
+    <Compile Include="RachunekBankowy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
