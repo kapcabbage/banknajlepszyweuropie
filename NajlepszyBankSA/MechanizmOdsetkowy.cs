@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class MechanizmOdsetkowy
+    public class MechanizmOdsetkowy
     {
         private decimal Odsetka { get
             {
                 return (decimal)0.02;
             } }
+
+        
     }
 }

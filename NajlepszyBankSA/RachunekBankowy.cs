@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class RachunekBankowy
+    public class RachunekBankowy : Rachunek
     {
         private decimal Debet { get; set; }
 

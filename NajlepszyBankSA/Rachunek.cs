@@ -6,12 +6,16 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class Rachunek
+    public class Rachunek
     {
-        protected ulong NumerRachunku { get; set; }
+        protected ulong IdRachunku { get; set; }
+
+        protected decimal Saldo { get; set; }
 
         protected DateTime DataZalozenia { get; set; }
 
         protected MechanizmOdsetkowy MechanizmOdsetkowy { get; set; }
+
+        protected HistoriaOperacji Historia { get; set; }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    class Bank
+    public class Bank
     {   
 
     }
