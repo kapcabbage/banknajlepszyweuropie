@@ -46,9 +46,9 @@
     <Compile Include="HistoriaOperacji.cs" />
     <Compile Include="LogOperacji.cs" />
     <Compile Include="MenadżerRaportów.cs" />
-    <Compile Include="OperacjaBankowa.cs" />
+    <Compile Include="Interfejsy\IOperacjaBankowa.cs" />
     <Compile Include="Bank.cs" />
-    <Compile Include="Interfejsy\iRachunek.cs" />
+    <Compile Include="Interfejsy\IRachunek.cs" />
     <Compile Include="Kredyt.cs" />
     <Compile Include="Lokata.cs" />
     <Compile Include="MechanizmOdsetkowy.cs" />
@@ -56,6 +56,7 @@
     <Compile Include="KontoKlienta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Przelew.cs" />
     <Compile Include="Rachunek.cs" />
     <Compile Include="RachunekBankowy.cs" />
   </ItemGroup>
