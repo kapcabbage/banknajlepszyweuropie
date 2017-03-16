@@ -6,3 +6,6 @@ C:\Users\student\Source\Repos\fajnie\NajlepszyBankSA\bin\Debug\NajlepszyBankSA.p
 C:\Users\student\Source\Repos\fajnie\NajlepszyBankSA\obj\Debug\NajlepszyBankSA.csprojResolveAssemblyReference.cache
 C:\Users\student\Source\Repos\fajnie\NajlepszyBankSA\obj\Debug\NajlepszyBankSA.exe
 C:\Users\student\Source\Repos\fajnie\NajlepszyBankSA\obj\Debug\NajlepszyBankSA.pdb
+D:\Dokumenty\Source\Bank\NajlepszyBankSA\bin\Debug\NajlepszyBankSA.exe.config
+D:\Dokumenty\Source\Bank\NajlepszyBankSA\obj\Debug\NajlepszyBankSA.exe
+D:\Dokumenty\Source\Bank\NajlepszyBankSA\obj\Debug\NajlepszyBankSA.pdb
