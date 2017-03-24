@@ -56,15 +56,15 @@ namespace UnitTest
             Console.Out.Write(s);
         }
 
-        [TestMethod]
-        public void TestSalda()
-        {
-            Rachunek r1 = new Rachunek();
-            r1.ZwiekszSaldo(20);
-            r1.ZmniejszSaldo(30);
-            decimal t1 = r1.GetSaldo();
+        //[TestMethod]
+        //public void TestSalda()
+        //{
+        //    Rachunek r1 = new Rachunek();
+        //    r1.ZwiekszSaldo(20);
+        //    r1.ZmniejszSaldo(30);
+        //    decimal t1 = r1.GetSaldo();
 
-            Assert.AreEqual(t1, 0);
-        }
+        //    Assert.AreEqual(t1, 0);
+        //}
     }
 }
