@@ -82,18 +82,20 @@ namespace NajlepszyBankSA
             _kwota = kwota;
         }
 
-        public void Wykonaj()
+        public bool Wykonaj()
         {
             try
             {
                 _dataOperacji = DateTime.Now;
                 _rachunekWykonujący.Saldo -= _kwota;
+                _rachunekDocelowy.Saldo += _kwota;
             }
             catch
             {
-                //TODO
+                return false;
             }
-            _rachunekDocelowy.Saldo += _kwota;
+
+            return true;
         }
     }
 }

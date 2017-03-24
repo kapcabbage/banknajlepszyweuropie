@@ -27,6 +27,6 @@ namespace NajlepszyBankSA
             get;
         }
 
-        void Wykonaj();
+        bool Wykonaj();
     }
 }
