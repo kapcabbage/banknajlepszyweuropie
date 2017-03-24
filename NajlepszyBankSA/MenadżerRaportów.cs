@@ -8,7 +8,7 @@ namespace NajlepszyBankSA
 {
     public class MenadżerRaportów
     {
-        private HistoriaOperacji _historia; 
+        protected HistoriaOperacji _historia; 
         public MenadżerRaportów(HistoriaOperacji historia)
         {
             _historia = historia;

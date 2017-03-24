@@ -6,27 +6,9 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IRachunek
+    interface IRachunek:IProdukt
     {
-        string Numer
-        {
-            get;
-            set;
-        }
-
-        decimal Saldo
-        {
-            get;
-            set;
-        }
-
-        IWłaściciel Właściciel
-        {
-            get;
-            set;
-        }
-
-        IBank BankPowiązany
+        decimal DopuszczalnyDebet
         {
             get;
             set;

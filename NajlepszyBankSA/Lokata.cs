@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NajlepszyBankSA.Interfejsy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,17 +7,11 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public class Lokata : Rachunek
+    public class Lokata : Produkt
     {
-        private decimal Oprocentowanie
-        {
-            get
-            {
-                return 2;
-            }
-        }
+        public IMechanizmOdsetkowy MechanizmOdsetkowy { get; set; }
 
-        public Lokata() : base()
+        Lokata(string numer, IWłaściciel właściciel, IBank bank) : base(numer, właściciel, bank)
         {
 
         }

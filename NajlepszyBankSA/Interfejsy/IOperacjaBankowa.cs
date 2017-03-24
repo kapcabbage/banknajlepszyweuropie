@@ -1,4 +1,5 @@
 ﻿using NajlepszyBankSA.Interfejsy;
+using NajlepszyBankSA.Interfejsy.Ograniczające;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public interface IOperacjaBankowa
+    public interface IOperacjaBankowa : ILogOperacji
     {
-        IRachunek RachunekWykonujący
+        IProdukt RachunekWykonujący
         {
             get;
             set;
@@ -21,10 +22,11 @@ namespace NajlepszyBankSA
             set;
         }
 
-        String Opis
+        new string Opis
         {
             get;
-            set;
         }
+
+        void Wykonaj();
     }
 }

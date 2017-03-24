@@ -50,8 +50,15 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="BazowyMechanizmOdsetkowyTests.cs" />
+    <Compile Include="OsobaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\NajlepszyBankSA\NajlepszyBankSA.csproj">
+      <Project>{42883d3a-0c81-42c7-a125-bd4e342ef3d8}</Project>
+      <Name>NajlepszyBankSA</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

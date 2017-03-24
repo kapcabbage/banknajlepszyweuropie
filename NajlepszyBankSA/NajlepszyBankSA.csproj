@@ -49,14 +49,17 @@
   <ItemGroup>
     <Compile Include="HistoriaOperacji.cs" />
     <Compile Include="Interfejsy\IBank.cs" />
+    <Compile Include="Interfejsy\ILokata.cs" />
+    <Compile Include="Interfejsy\IMechanizmOdsetkowy.cs" />
     <Compile Include="Interfejsy\IOsoba.cs" />
     <Compile Include="Interfejsy\IPrzelew.cs" />
+    <Compile Include="Interfejsy\IRachunek.cs" />
     <Compile Include="Interfejsy\IWłaściciel.cs" />
-    <Compile Include="LogOperacji.cs" />
+    <Compile Include="Interfejsy\Ograniczające\ILogOperacji.cs" />
     <Compile Include="MenadżerRaportów.cs" />
     <Compile Include="Interfejsy\IOperacjaBankowa.cs" />
     <Compile Include="Bank.cs" />
-    <Compile Include="Interfejsy\IRachunek.cs" />
+    <Compile Include="Interfejsy\IProdukt.cs" />
     <Compile Include="Kredyt.cs" />
     <Compile Include="Lokata.cs" />
     <Compile Include="MechanizmOdsetkowy.cs" />
@@ -65,8 +68,8 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Przelew.cs" />
+    <Compile Include="Produkt.cs" />
     <Compile Include="Rachunek.cs" />
-    <Compile Include="RachunekBankowy.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

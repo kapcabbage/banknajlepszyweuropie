@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NajlepszyBankSA.Interfejsy.Ograniczające;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,9 +9,9 @@ namespace NajlepszyBankSA
 {
     public class HistoriaOperacji
     {
-        private List<LogOperacji> _opeacje;
+        protected List<ILogOperacji> _opeacje;
 
-        public List<LogOperacji> Operacje
+        public List<ILogOperacji> Operacje
         {
             get
             {
@@ -24,7 +25,7 @@ namespace NajlepszyBankSA
 
         public HistoriaOperacji()
         {
-            _opeacje = new List<LogOperacji>();
+            _opeacje = new List<ILogOperacji>();
         }
     }
 }

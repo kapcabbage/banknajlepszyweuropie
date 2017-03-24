@@ -9,14 +9,14 @@ namespace NajlepszyBankSA
 {
     public class Osoba : IOsoba
     {
-        private string _imie;
-        private string _naziwsko;
-        private string _pesel;
-        private string _miesto;
-        private string _ulica;
-        private string _numerDomu;
-        private string _numerLokalu;
-        private string _kodPocztowy;
+        protected string _imie;
+        protected string _nazwisko;
+        protected string _pesel;
+        protected string _miesto;
+        protected string _ulica;
+        protected string _numerDomu;
+        protected string _numerLokalu;
+        protected string _kodPocztowy;
 
         public string Imie
         {
@@ -35,12 +35,12 @@ namespace NajlepszyBankSA
         {
             get
             {
-                return _naziwsko;
+                return _nazwisko;
             }
 
             set
             {
-                _naziwsko = value;
+                _nazwisko = value;
             }
         }
 
@@ -126,7 +126,7 @@ namespace NajlepszyBankSA
         {
             get
             {
-                return String.Format("{0} {1}", _imie, _naziwsko);
+                return String.Format("{0} {1}", _imie, _nazwisko);
             }
         }
 
@@ -140,9 +140,9 @@ namespace NajlepszyBankSA
 
         public Osoba(string imie, string nazwisko, string pesel)
         {
-            this.Imie = Imie;
-            this.Nazwisko = Nazwisko;
-            this.PESEL = pesel;
+            _imie = imie;
+            _nazwisko = nazwisko;
+            _pesel = pesel;
         }
     }
 }

@@ -8,12 +8,12 @@ namespace NajlepszyBankSA
 {
     public class KontoKlienta
     {
-        private static int GlobalIdKonta = 1;
+        protected static int GlobalIdKonta = 1;
 
-        private int IdKonta { get; set; }
-        private Osoba Klient { get; set; }
+        protected int IdKonta { get; set; }
+        protected Osoba Klient { get; set; }
 
-        private List<Rachunek> Produkty { get; set; }
+        protected List<Produkt> Produkty { get; set; }
         
 
         public KontoKlienta(Osoba Klient)

@@ -6,15 +6,9 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IPrzelew : IOperacjaBankowa
+    public interface ILokata: IProdukt
     {
-        IProdukt RachunekDocelowy
-        {
-            get;
-            set;
-        }
-
-        decimal Kwota
+        IMechanizmOdsetkowy mechanizmOdsetkowy
         {
             get;
             set;

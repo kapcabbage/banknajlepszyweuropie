@@ -9,11 +9,25 @@ namespace NajlepszyBankSA
 {
     public class Przelew : IPrzelew
     {
-        private IRachunek _rachunekDocelowy;
-        private IRachunek _rachunekWykonujący;
-        private decimal _kwota;
+        protected IProdukt _rachunekDocelowy;
+        protected IProdukt _rachunekWykonujący;
+        protected decimal _kwota;
+        protected DateTime _dataOperacji;
 
-        public IRachunek RachunekDocelowy
+        public IProdukt RachunekWykonujący
+        {
+            get
+            {
+                return _rachunekWykonujący;
+            }
+
+            set
+            {
+                _rachunekWykonujący = value;
+            }
+        }
+
+        public IProdukt RachunekDocelowy
         {
             get
             {
@@ -39,29 +53,17 @@ namespace NajlepszyBankSA
             }
         }
 
-        public IRachunek RachunekWykonujący
-        {
-            get
-            {
-                return _rachunekWykonujący;
-            }
-
-            set
-            {
-                _rachunekWykonujący = value;
-            }
-        }
 
         public DateTime DataOperacji
         {
             get
             {
-                throw new NotImplementedException();
+                return _dataOperacji;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _dataOperacji = value;
             }
         }
 
@@ -69,29 +71,28 @@ namespace NajlepszyBankSA
         {
             get
             {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return string.Format("Dnia {0} dokonano przelewu z {1} na {2} na kwotę {3}", _dataOperacji, _rachunekWykonujący.Numer, RachunekDocelowy.Numer, _kwota);
             }
         }
 
-        public Przelew(Rachunek rachunekZ, Rachunek rachunekNa, decimal kwota)
+        public Przelew(Produkt rachunekZ, Produkt rachunekNa, decimal kwota)
         {
             _rachunekDocelowy = rachunekNa;
             _rachunekWykonujący = rachunekZ;
             _kwota = kwota;
         }
 
-        public LogOperacji StworzLog()
+        public void Wykonaj()
         {
-            LogOperacji logOperacji = new LogOperacji();
-            logOperacji.Data = DateTime.Now;
-            logOperacji.Opis = string.Format("Wykonano przelew z {0} do {1} na kwotę {2}");
-
-            return logOperacji;
+            try
+            {
+                _rachunekWykonujący.Saldo -= _kwota;
+            }
+            catch
+            {
+                //TODO
+            }
+            _rachunekDocelowy.Saldo += _kwota;
         }
     }
 }

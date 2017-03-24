@@ -9,7 +9,7 @@ namespace NajlepszyBankSA
 {
     public class Bank : IBank
     {   
-        private List<KontoKlienta> Konta { get; set; }
+        protected List<KontoKlienta> Konta { get; set; }
 
         public void stworzPospolitegoKlienta(string imie, string nazwisko, string pesel)
         {

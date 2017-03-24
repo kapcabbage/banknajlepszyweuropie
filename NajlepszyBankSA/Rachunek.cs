@@ -7,78 +7,19 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public class Rachunek : IRachunek
+    public class Rachunek : Produkt, IRachunek
     {
-        private string _numer;
-        private decimal _saldo;
-        private Osoba _właściciel;
-        private Bank _bankPowiązany;
+        protected decimal _debet;
 
-        public decimal Saldo
+        public decimal Debet
         {
-            get
-            {
-                return _saldo;
-            }
-            set
-            {
-                _saldo = value;
-            }
-        }
-
-        public string Numer
-        {
-            get
-            {
-                return _numer;
-            }
-
-            set
-            {
-                _numer = value;
-            }
-        }
-
-        protected DateTime DataZalozenia { get; set; }
-
-        protected MechanizmOdsetkowy MechanizmOdsetkowy { get; set; }
-
-        protected HistoriaOperacji Historia { get; set; }
-
-        public IWłaściciel Właściciel
-        {
-            get
-            {
-                return _właściciel;
-            }
-
-            set
-            {
-                _właściciel = (Osoba)value;
-            }
-        }
-
-        public IBank BankPowiązany
-        {
-            get
-            {
-                return _bankPowiązany;
-            }
-
-            set
-            {
-                _bankPowiązany = (Bank)value;
-            }
-        }
-
-        public Rachunek()
-        {
-            this.Saldo = 0;
-            this.DataZalozenia = DateTime.Now;
-            this.MechanizmOdsetkowy = new MechanizmOdsetkowy();
-            this.Historia = new HistoriaOperacji();
-
+            get;
+            set;
         }
         
+        public Rachunek(string numer, IWłaściciel właściciel, IBank bank) : base(numer, właściciel, bank) 
+        {
+        }
+
     }
 }
