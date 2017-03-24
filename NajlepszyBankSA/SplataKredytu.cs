@@ -69,7 +69,7 @@ namespace NajlepszyBankSA
             }
         }
 
-        public void Wykonaj()
+        public bool Wykonaj()
         {
             throw new NotImplementedException();
         }
