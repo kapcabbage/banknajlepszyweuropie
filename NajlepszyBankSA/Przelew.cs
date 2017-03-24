@@ -14,6 +14,19 @@ namespace NajlepszyBankSA
         protected decimal _kwota;
         protected DateTime _dataOperacji;
 
+
+        IProdukt IOperacjaBankowa.RachunekWykonujący
+        {
+            get
+            {
+                return _rachunekWykonujący;
+            }
+
+            set
+            {
+                _rachunekWykonujący = (IRachunek)value;
+            }
+        }
         public IRachunek RachunekWykonujący
         {
             get

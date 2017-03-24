@@ -13,8 +13,20 @@ namespace NajlepszyBankSA
         protected decimal _kwota;
         protected DateTime _dataOperacji;
         protected string _opis;
-        protected IProdukt _rachunekWykonujacy;
+        protected IRachunek _rachunekWykonujacy;
 
+        IProdukt IOperacjaBankowa.RachunekWykonujący
+        {
+            get
+            {
+                return _rachunekWykonujacy;
+            }
+
+            set
+            {
+                _rachunekWykonujacy = (IRachunek)value;
+            }
+        }
         public DateTime DataOperacji
         {
             get
@@ -49,7 +61,7 @@ namespace NajlepszyBankSA
             }
         }
 
-        public IProdukt RachunekWykonujący
+        public IRachunek RachunekWykonujący
         {
             get
             {
@@ -62,23 +74,25 @@ namespace NajlepszyBankSA
             }
         }
 
-        public Wyplata(IProdukt rachunekWykonujacy,decimal kwota)
+        public Wyplata(IRachunek rachunekWykonujacy,decimal kwota)
         {
             _rachunekWykonujacy = rachunekWykonujacy;
             _kwota = kwota; 
         }
 
-        public void Wykonaj()
+        public bool Wykonaj()
         {
             try
             {
                 _dataOperacji = DateTime.Now;
                 _rachunekWykonujacy.Saldo -= _kwota;
+                return true;
             }
             catch
             {
                 //TODO
             }
+            return false;
         }
     }
 }

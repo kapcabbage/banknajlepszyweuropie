@@ -8,6 +8,11 @@ namespace NajlepszyBankSA.Interfejsy
 {
     public interface IPrzelew : IOperacjaBankowa
     {
+        new IRachunek RachunekWykonujący
+        {
+            get;set;
+        }
+
         IRachunek RachunekDocelowy
         {
             get;
