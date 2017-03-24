@@ -87,12 +87,11 @@ namespace NajlepszyBankSA
             try
             {
                 _rachunekWykonujący.Saldo -= _kwota;
+                _rachunekDocelowy.Saldo += _kwota;
             }
             catch
             {
-                //TODO
             }
-            _rachunekDocelowy.Saldo += _kwota;
         }
     }
 }
