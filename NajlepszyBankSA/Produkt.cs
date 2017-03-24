@@ -11,7 +11,6 @@ namespace NajlepszyBankSA
     {
         protected string _numer;
         protected decimal _saldo;
-        protected decimal _dopuszczalnyDebet;
         protected DateTime _dataZałożenia;
         protected IWłaściciel _właściciel;
         protected IBank _bank;
@@ -68,19 +67,6 @@ namespace NajlepszyBankSA
             set
             {
                 _bank = value;
-            }
-        }
-
-        public decimal DopuszczalnyDebet
-        {
-            get
-            {
-                return _dopuszczalnyDebet;
-            }
-
-            set
-            {
-                _dopuszczalnyDebet = value;
             }
         }
 
