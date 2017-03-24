@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NajlepszyBankSA.Interfejsy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,22 @@ namespace NajlepszyBankSA
 {
     public interface IOperacjaBankowa
     {
-        LogOperacji StworzLog();
+        IRachunek RachunekWykonujący
+        {
+            get;
+            set;
+        }
+
+        DateTime DataOperacji
+        {
+            get;
+            set;
+        }
+
+        String Opis
+        {
+            get;
+            set;
+        }
     }
 }

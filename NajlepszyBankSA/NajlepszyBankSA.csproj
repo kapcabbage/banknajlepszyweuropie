@@ -48,6 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HistoriaOperacji.cs" />
+    <Compile Include="Interfejsy\IBank.cs" />
+    <Compile Include="Interfejsy\IOsoba.cs" />
+    <Compile Include="Interfejsy\IPrzelew.cs" />
+    <Compile Include="Interfejsy\IWłaściciel.cs" />
     <Compile Include="LogOperacji.cs" />
     <Compile Include="MenadżerRaportów.cs" />
     <Compile Include="Interfejsy\IOperacjaBankowa.cs" />

@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NajlepszyBankSA", "NajlepszyBankSA\NajlepszyBankSA.csproj", "{42883D3A-0C81-42C7-A125-BD4E342EF3D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{C9F3A5EB-DB84-4561-A052-4EACF8FA4252}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NajlepszyBankSAUnitTest", "NajlepszyBankSAUnitTest\NajlepszyBankSAUnitTest.csproj", "{12317B70-11B9-440B-AF6B-E8103DBEAD6B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{42883D3A-0C81-42C7-A125-BD4E342EF3D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{42883D3A-0C81-42C7-A125-BD4E342EF3D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{42883D3A-0C81-42C7-A125-BD4E342EF3D8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C9F3A5EB-DB84-4561-A052-4EACF8FA4252}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C9F3A5EB-DB84-4561-A052-4EACF8FA4252}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C9F3A5EB-DB84-4561-A052-4EACF8FA4252}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C9F3A5EB-DB84-4561-A052-4EACF8FA4252}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12317B70-11B9-440B-AF6B-E8103DBEAD6B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12317B70-11B9-440B-AF6B-E8103DBEAD6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12317B70-11B9-440B-AF6B-E8103DBEAD6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12317B70-11B9-440B-AF6B-E8103DBEAD6B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,28 @@ namespace NajlepszyBankSA.Interfejsy
 {
     public interface IRachunek
     {
+        string Numer
+        {
+            get;
+            set;
+        }
 
+        decimal Saldo
+        {
+            get;
+            set;
+        }
+
+        IWłaściciel Właściciel
+        {
+            get;
+            set;
+        }
+
+        IBank BankPowiązany
+        {
+            get;
+            set;
+        }
     }
 }
