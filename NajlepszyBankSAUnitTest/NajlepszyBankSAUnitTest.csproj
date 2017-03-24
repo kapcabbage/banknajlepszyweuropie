@@ -54,6 +54,7 @@
     <Compile Include="OsobaTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RachunekTests.cs" />
+    <Compile Include="UnitTest2.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\NajlepszyBankSA\NajlepszyBankSA.csproj">
