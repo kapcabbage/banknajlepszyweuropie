@@ -7,7 +7,7 @@ using NajlepszyBankSA.Interfejsy;
 
 namespace NajlepszyBankSA
 {
-    public class Kredyt : IProdukt
+    public class Kredyt : IKredyt
     {
         protected IRachunek _rachunek;
         protected IBank _bank;
@@ -15,7 +15,7 @@ namespace NajlepszyBankSA
         protected IWłaściciel _wlasciciel;
 
 
-        public IRachunek Rachunek
+        public IRachunek RachunekPowiazany
         {
             get
             {

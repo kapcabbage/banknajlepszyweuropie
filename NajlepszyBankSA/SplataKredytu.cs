@@ -9,16 +9,21 @@ namespace NajlepszyBankSA
 {
     public class SplataKredytu : ISplataKredytu
     {
+        protected DateTime _dataOperacji;
+        protected decimal _kwota;
+        protected IKredyt _kredyt;
+        
+
         public DateTime DataOperacji
         {
             get
             {
-                throw new NotImplementedException();
+                return _dataOperacji;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _dataOperacji = value;
             }
         }
 
@@ -26,12 +31,12 @@ namespace NajlepszyBankSA
         {
             get
             {
-                throw new NotImplementedException();
+                return _kwota;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _kwota = value;
             }
         }
 
@@ -39,20 +44,7 @@ namespace NajlepszyBankSA
         {
             get
             {
-                throw new NotImplementedException();
-            }
-        }
-
-        public IRachunek rachunek
-        {
-            get
-            {
-                throw new NotImplementedException();
-            }
-
-            set
-            {
-                throw new NotImplementedException();
+                return string.Format("Dnia {0} dokonano splaty kredytu z {1} na kwotę {2}", _dataOperacji, _kredyt.RachunekPowiazany.Numer, _kwota);
             }
         }
 
@@ -60,18 +52,29 @@ namespace NajlepszyBankSA
         {
             get
             {
-                throw new NotImplementedException();
+                return _kredyt;
             }
 
             set
             {
-                throw new NotImplementedException();
+                _kredyt = (IKredyt)value;
             }
         }
 
-        public void Wykonaj()
+        public bool Wykonaj()
         {
-            throw new NotImplementedException();
+            try
+            {
+                _dataOperacji = DateTime.Now;
+                _kredyt.RachunekPowiazany.Saldo -= _kwota;
+                _kredyt.Saldo -= _kwota;
+                return true;
+            }
+            catch
+            {
+                //TODO
+            }
+            return false;
         }
     }
 }

@@ -15,7 +15,7 @@ namespace NajlepszyBankSA.Interfejsy
             set;
         }
 
-        IMechanizmOdsetkowy mechanizmOdsetkowy
+        IMechanizmOdsetkowy MechanizmOdsetkowy
         {
             get;
             set;
