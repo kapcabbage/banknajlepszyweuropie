@@ -9,12 +9,12 @@ namespace NajlepszyBankSA
 {
     public class Przelew : IPrzelew
     {
-        protected IProdukt _rachunekDocelowy;
-        protected IProdukt _rachunekWykonujący;
+        protected IRachunek _rachunekDocelowy;
+        protected IRachunek _rachunekWykonujący;
         protected decimal _kwota;
         protected DateTime _dataOperacji;
 
-        public IProdukt RachunekWykonujący
+        public IRachunek RachunekWykonujący
         {
             get
             {
@@ -27,7 +27,7 @@ namespace NajlepszyBankSA
             }
         }
 
-        public IProdukt RachunekDocelowy
+        public IRachunek RachunekDocelowy
         {
             get
             {
@@ -75,7 +75,7 @@ namespace NajlepszyBankSA
             }
         }
 
-        public Przelew(Produkt rachunekZ, Produkt rachunekNa, decimal kwota)
+        public Przelew(Rachunek rachunekZ, Rachunek rachunekNa, decimal kwota)
         {
             _rachunekDocelowy = rachunekNa;
             _rachunekWykonujący = rachunekZ;
@@ -86,6 +86,7 @@ namespace NajlepszyBankSA
         {
             try
             {
+                _dataOperacji = DateTime.Now;
                 _rachunekWykonujący.Saldo -= _kwota;
             }
             catch

@@ -54,6 +54,9 @@
     <Compile Include="Interfejsy\IOsoba.cs" />
     <Compile Include="Interfejsy\IPrzelew.cs" />
     <Compile Include="Interfejsy\IRachunek.cs" />
+    <Compile Include="Interfejsy\ISplataKredytu.cs" />
+    <Compile Include="Interfejsy\IWplata.cs" />
+    <Compile Include="Interfejsy\IWyplata.cs" />
     <Compile Include="Interfejsy\IWłaściciel.cs" />
     <Compile Include="Interfejsy\Ograniczające\ILogOperacji.cs" />
     <Compile Include="MenadżerRaportów.cs" />
@@ -70,6 +73,9 @@
     <Compile Include="Przelew.cs" />
     <Compile Include="Produkt.cs" />
     <Compile Include="Rachunek.cs" />
+    <Compile Include="SplataKredytu.cs" />
+    <Compile Include="Wplata.cs" />
+    <Compile Include="Wyplata.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

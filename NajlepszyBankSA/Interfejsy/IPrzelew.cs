@@ -8,7 +8,7 @@ namespace NajlepszyBankSA.Interfejsy
 {
     public interface IPrzelew : IOperacjaBankowa
     {
-        IProdukt RachunekDocelowy
+        IRachunek RachunekDocelowy
         {
             get;
             set;

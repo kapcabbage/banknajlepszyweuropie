@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IRachunek:IProdukt
+    public interface ISplataKredytu : IOperacjaBankowa
     {
-        string Numer
+        IRachunek rachunek
         {
-            get;
-            set;
+            get;set;
         }
-        decimal DopuszczalnyDebet
+        decimal Kwota
         {
-            get;
-            set;
+            get; set;
         }
     }
 }

@@ -8,6 +8,13 @@ namespace NajlepszyBankSA.Interfejsy
 {
     public interface ILokata: IProdukt
     {
+
+        string Numer
+        {
+            get;
+            set;
+        }
+
         IMechanizmOdsetkowy mechanizmOdsetkowy
         {
             get;

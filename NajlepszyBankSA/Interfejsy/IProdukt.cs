@@ -8,11 +8,6 @@ namespace NajlepszyBankSA.Interfejsy
 {
     public interface IProdukt
     {
-        string Numer
-        {
-            get;
-            set;
-        }
 
         decimal Saldo
         {
