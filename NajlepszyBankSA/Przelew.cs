@@ -82,7 +82,7 @@ namespace NajlepszyBankSA
             _kwota = kwota;
         }
 
-        public void Wykonaj()
+        public bool Wykonaj()
         {
             try
             {
@@ -91,7 +91,10 @@ namespace NajlepszyBankSA
             }
             catch
             {
+                return false;
             }
+
+            return true;
         }
     }
 }
