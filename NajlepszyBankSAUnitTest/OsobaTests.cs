@@ -24,14 +24,14 @@ namespace NajlepszyBankSA.Tests
         }
 
         [TestMethod()]
-        public void NazwaZawieraPodstawoweElementy()
+        public void OsobaNazwaZawieraPodstawoweElementy()
         {
             string nazwaLow = _osoba.Nazwa.ToLower();
             Assert.IsTrue(nazwaLow.Contains("jacek") && nazwaLow.Contains("senny"));
         }
 
         [TestMethod()]
-        public void PełenAdresZawieraUlicęIMiasto()
+        public void OsobaPełenAdresZawieraUlicęIMiasto()
         {
             string adresLow = _osoba.PełenAdres.ToLower();
             Assert.IsTrue(adresLow.Contains("poznań") && adresLow.Contains("piotrowo"));

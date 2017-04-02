@@ -10,34 +10,24 @@ using System.Threading.Tasks;
 namespace NajlepszyBankSA.Tests
 {
     [TestClass()]
-    public class RachunekTests
+    public class KredytTests
     {
-        private Rachunek _rachunek;
-
+        private Kredyt _kredyt;
 
         [TestInitialize]
         public void init()
         {
-            _rachunek = new Rachunek(Guid.NewGuid().ToString(), new WłaśicielMock(), new BankMock());
-            _rachunek.Saldo = 1000M;
-            _rachunek.DopuszczalnyDebet = 1000M;
-        }
-
-        [TestMethod()]
-        public void WypłataZDopuszczalnymDebetem()
-        {
-            _rachunek.Saldo -= 2000M;
-            Assert.IsTrue(_rachunek.Saldo == -1000M);
+            _kredyt = new Kredyt(Guid.NewGuid(), new WłaścicielMock(), new BankMock(), 1000M);
         }
 
         [TestMethod()]
         [ExpectedException(typeof(InvalidOperationException))]
-        public void WypłataPrzekraczającaDebet()
+        public void SaldoKredytuPoniżejZera()
         {
-            _rachunek.Saldo -= 3000M;
+            _kredyt.Saldo -= 2000M;
         }
 
-        private class WłaśicielMock : IWłaściciel
+        private class WłaścicielMock : IWłaściciel
         {
             public string KodPocztowy
             {
@@ -120,7 +110,6 @@ namespace NajlepszyBankSA.Tests
                 }
             }
         }
-
         private class BankMock : IBank
         {
             public void Wykonaj(IOperacjaBankowa operacja)

@@ -10,100 +10,113 @@ using System.Threading.Tasks;
 namespace NajlepszyBankSA.Tests
 {
     [TestClass()]
-    public class BazowyMechanizmOdsetkowyTests
+    public class LokataTests
     {
-        private BazowyMechanizmOdsetkowy _mechanizm;
-        private RachunekMock _rachunek;
-        private class RachunekMock : IProdukt
-        {
-            private decimal _saldo;
-            public IBank Bank
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-
-                set
-                {
-                    throw new NotImplementedException();
-                }
-            }
-
-            public decimal DopuszczalnyDebet
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-
-                set
-                {
-                    throw new NotImplementedException();
-                }
-            }
-
-            public IHistoriaOperacji Historia
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-            }
-
-            public string Numer
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-
-                set
-                {
-                    throw new NotImplementedException();
-                }
-            }
-
-            public decimal Saldo
-            {
-                get
-                {
-                    return _saldo;
-                }
-
-                set
-                {
-                    _saldo = value;
-                }
-            }
-
-            public IWłaściciel Właściciel
-            {
-                get
-                {
-                    throw new NotImplementedException();
-                }
-
-                set
-                {
-                    throw new NotImplementedException();
-                }
-            }
-        }
+        private Lokata _lokata;
 
         [TestInitialize]
         public void Init()
         {
-            _rachunek = new RachunekMock();
-            _rachunek.Saldo = 1000;
-            _mechanizm = new BazowyMechanizmOdsetkowy(_rachunek, -2);
+            _lokata = new Lokata(Guid.NewGuid(), new WłaścicielMock(), new BankMock(), 1000M);
         }
 
         [TestMethod()]
-        public void MechanizmOdsetkowyNaliczanieOdsetek()
+        [ExpectedException(typeof(InvalidOperationException))]
+        public void LokataSaldoNieMożnaModyfikować()
         {
-            _mechanizm.Nalicz();
-            Assert.IsTrue(_rachunek.Saldo == 980M);
+            _lokata.Saldo -= 100M;
+        }
+
+        private class WłaścicielMock : IWłaściciel
+        {
+            public string KodPocztowy
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string Miasto
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string Nazwa
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string NumerDomu
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string NumerLokalu
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string PełenAdres
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public string Ulica
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+        }
+
+        private class BankMock : IBank
+        {
+            public void Wykonaj(IOperacjaBankowa operacja)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

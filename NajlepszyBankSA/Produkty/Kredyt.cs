@@ -17,6 +17,23 @@ namespace NajlepszyBankSA
         }
 
 
+
+        new public decimal Saldo
+        {
+            get
+            {
+                return _saldo;
+            }
+            set
+            {
+                if(value < 0)
+                {
+                    throw new InvalidOperationException();
+                }
+                _saldo = value;
+            }
+        }
+
         public IRachunek RachunekPowiazany
         {
             get

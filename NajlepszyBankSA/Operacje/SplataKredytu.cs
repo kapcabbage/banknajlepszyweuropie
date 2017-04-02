@@ -12,6 +12,12 @@ namespace NajlepszyBankSA
         protected DateTime _dataOperacji;
         protected decimal _kwota;
         protected IKredyt _kredyt;
+
+        public SplataKredytu(IKredyt kredyt, decimal kwota)
+        {
+            _kredyt = kredyt;
+            _kwota = kwota;
+        }
         
 
         public DateTime DataOperacji
@@ -60,7 +66,7 @@ namespace NajlepszyBankSA
                 _kredyt = (IKredyt)value;
             }
         }
-
+        
         public bool Wykonaj()
         {
             try
