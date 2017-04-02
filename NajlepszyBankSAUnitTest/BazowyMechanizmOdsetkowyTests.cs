@@ -43,6 +43,14 @@ namespace NajlepszyBankSA.Tests
                 }
             }
 
+            public IHistoriaOperacji Historia
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
             public string Numer
             {
                 get
@@ -92,7 +100,7 @@ namespace NajlepszyBankSA.Tests
         }
 
         [TestMethod()]
-        public void NaliczTest()
+        public void NaliczanieOdsetekTest()
         {
             _mechanizm.Nalicz();
             Assert.IsTrue(_rachunek.Saldo == 980M);

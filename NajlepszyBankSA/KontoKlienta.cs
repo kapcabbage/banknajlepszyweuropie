@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NajlepszyBankSA.Interfejsy;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,21 +7,50 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public class KontoKlienta
+    public class KontoKlienta : IKontoKlienta
     {
-        protected static int GlobalIdKonta = 1;
+        protected Guid _ID;
+        protected IWłaściciel _właściciel;
+        protected List<IProdukt> _produkty;
 
-        protected int IdKonta { get; set; }
-        protected Osoba Klient { get; set; }
+        public Guid ID
+        {
+            get
+            {
+                return _ID;
+            }
+            set
+            {
+                _ID = value;
+            }
+        }
+    
+        public IWłaściciel Właściciel
+        {
+            get
+            {
+                return _właściciel;
+            }
+            set
+            {
+                _właściciel = value;
+            }
+        }
 
-        protected List<Produkt> Produkty { get; set; }
+        public ICollection<IProdukt> Produkty
+        {
+            get
+            {
+                return _produkty;
+            }
+        }
         
 
-        public KontoKlienta(Osoba Klient)
+        public KontoKlienta(Guid ID, IWłaściciel właściciel)
         {
-            this.Klient = Klient;
-            this.IdKonta = ++GlobalIdKonta;
-
+            _ID = ID;
+            _właściciel = właściciel;
+            _produkty = new List<IProdukt>();
         }
     }
 }

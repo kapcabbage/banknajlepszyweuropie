@@ -8,25 +8,28 @@ using System.Threading.Tasks;
 namespace NajlepszyBankSA
 {
     public class Bank : IBank
-    {   
-        protected List<KontoKlienta> Konta { get; set; }
+    {
+        protected List<KontoKlienta> _konta;
+        protected HistoriaOperacji _historia;
 
         public void stworzPospolitegoKlienta(string imie, string nazwisko, string pesel)
         {
             Osoba Klient = new Osoba(imie, nazwisko, pesel);
-            KontoKlienta Konto = new KontoKlienta(Klient);
+            KontoKlienta Konto = new KontoKlienta(Guid.NewGuid(),Klient);
 
-            Konta.Add(Konto);
+            _konta.Add(Konto);
         }
 
-        public void stworzRachunek(KontoKlienta Klient)
+        public void stworzZwyczajnyRachunek(KontoKlienta Klient)
         {
 
         }
 
         public void Wykonaj(IOperacjaBankowa operacja)
         {
-            throw new NotImplementedException();
+            operacja.Wykonaj();
+            _historia.Operacje.Add(operacja);
+            operacja.RachunekWykonujący.Historia.Operacje.Add(operacja);
         }
     }
 }

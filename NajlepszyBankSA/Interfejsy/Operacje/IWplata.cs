@@ -1,5 +1,4 @@
-﻿using NajlepszyBankSA.Interfejsy.Ograniczające;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,12 +6,11 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IHistoriaOperacji
+    public interface IWplata : IOperacjaBankowa
     {
-        ICollection<ILogOperacji> Operacje
+        decimal Kwota
         {
-            get;
+            get;set;
         }
-
     }
 }

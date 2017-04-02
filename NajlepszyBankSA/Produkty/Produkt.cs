@@ -9,9 +9,11 @@ namespace NajlepszyBankSA
 {
     public class Produkt : IProdukt
     {
-        protected string _numer;
+        protected Guid _numer;
         protected decimal _saldo;
         protected DateTime _dataZałożenia;
+        protected HistoriaOperacji _historia;
+
         protected IWłaściciel _właściciel;
         protected IBank _bank;
 
@@ -27,7 +29,7 @@ namespace NajlepszyBankSA
             }
         }
 
-        public string Numer
+        public Guid Numer
         {
             get
             {
@@ -40,9 +42,25 @@ namespace NajlepszyBankSA
             }
         }
 
-        protected DateTime DataZałożenia { get; set; }
+        public DateTime DataZałożenia
+        {
+            get
+            {
+                return _dataZałożenia;
+            }
+            set
+            {
+                _dataZałożenia = value;
+            }
+        }
 
-        protected HistoriaOperacji Historia { get; set; }
+        public IHistoriaOperacji Historia
+        {
+            get
+            {
+                return _historia;
+            }
+        }
 
         public IWłaściciel Właściciel
         {
@@ -70,14 +88,14 @@ namespace NajlepszyBankSA
             }
         }
 
-        public Produkt(string numer, IWłaściciel właściciel, IBank bank)
+        public Produkt(Guid numer, IWłaściciel właściciel, IBank bank)
         {
             _numer = numer;
             _właściciel = właściciel;
             _bank = bank;
 
             _dataZałożenia = DateTime.Now;
-            Historia = new HistoriaOperacji();
+            _historia = new HistoriaOperacji();
         }
         
     }

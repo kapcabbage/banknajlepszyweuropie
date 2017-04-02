@@ -6,20 +6,14 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IPrzelew : IOperacjaBankowa
+    public interface IRachunek:IProdukt
     {
-        new IRachunek RachunekWykonujący
-        {
-            get;set;
-        }
-
-        IRachunek RachunekDocelowy
+        Guid Numer
         {
             get;
             set;
         }
-
-        decimal Kwota
+        decimal DopuszczalnyDebet
         {
             get;
             set;

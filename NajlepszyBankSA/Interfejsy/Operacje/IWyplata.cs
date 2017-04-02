@@ -6,25 +6,13 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    public interface IProdukt
+    public interface IWyplata : IOperacjaBankowa
     {
-
-        decimal Saldo
+        decimal Kwota
         {
             get;
             set;
         }
 
-        IWłaściciel Właściciel
-        {
-            get;
-            set;
-        }
-
-        IBank Bank
-        {
-            get;
-            set;
-        }
     }
 }

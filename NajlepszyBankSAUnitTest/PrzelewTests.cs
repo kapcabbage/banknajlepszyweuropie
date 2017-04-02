@@ -19,9 +19,9 @@ namespace NajlepszyBankSA.Tests
         [TestInitialize]
         public void Init()
         {
-            _rachunek1 = new Rachunek(Guid.NewGuid().ToString(), new WłaścicielMock(), new BankMock());
+            _rachunek1 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
             _rachunek1.Saldo = 1000M;
-            _rachunek2 = new Rachunek(Guid.NewGuid().ToString(), new WłaścicielMock(), new BankMock());
+            _rachunek2 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
             _rachunek2.Saldo = 2000M;
         }
 

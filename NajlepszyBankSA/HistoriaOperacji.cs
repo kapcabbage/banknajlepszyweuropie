@@ -12,15 +12,11 @@ namespace NajlepszyBankSA
     {
         protected List<ILogOperacji> _opeacje;
 
-        public List<ILogOperacji> Operacje
+        public ICollection<ILogOperacji> Operacje
         {
             get
             {
                 return _opeacje;
-            }
-            set
-            {
-                _opeacje = value;
             }
         }
 
