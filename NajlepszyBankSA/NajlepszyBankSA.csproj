@@ -69,7 +69,7 @@
     <Compile Include="NieliniowyMechanizmOdsetkowy.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />
-    <Compile Include="MechanizmOdsetkowy.cs" />
+    <Compile Include="MechanizmyOdsetkowe\MechanizmOdsetkowy.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="KontoKlienta.cs" />
     <Compile Include="Program.cs" />
@@ -85,6 +85,7 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
