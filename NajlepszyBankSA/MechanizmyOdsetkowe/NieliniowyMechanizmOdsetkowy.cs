@@ -16,7 +16,8 @@ namespace NajlepszyBankSA
 
         protected override decimal ObliczProcent()
         {
-            return 0;
+            double saldo = Double.Parse(_rachunek.Saldo.ToString());
+            return (decimal) Math.Log( saldo );
         }
 
     }
