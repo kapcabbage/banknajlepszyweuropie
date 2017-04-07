@@ -7,8 +7,17 @@ using NajlepszyBankSA.Interfejsy;
 
 namespace NajlepszyBankSA
 {
-    public class NieliniowyMechanizmOdsetkowy 
+    public class NieliniowyMechanizmOdsetkowy : BazowyMechanizmOdsetkowy
     {
-       
+       public NieliniowyMechanizmOdsetkowy(IProdukt rachunek, decimal procent) : base (rachunek,procent)
+       {
+
+       }
+
+        protected override void ObliczProcent()
+        {
+            
+        }
+
     }
 }
