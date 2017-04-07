@@ -7,7 +7,7 @@ using NajlepszyBankSA.Interfejsy;
 
 namespace NajlepszyBankSA
 {
-    public class SplataKredytu : ISplataKredytu
+    public class SplataKredytu: ISplataKredytu
     {
         protected DateTime _dataOperacji;
         protected decimal _kwota;
@@ -18,7 +18,7 @@ namespace NajlepszyBankSA
             _kredyt = kredyt;
             _kwota = kwota;
         }
-        
+
 
         public DateTime DataOperacji
         {
@@ -63,22 +63,29 @@ namespace NajlepszyBankSA
 
             set
             {
-                _kredyt = (IKredyt)value;
+                _kredyt = (IKredyt) value;
             }
         }
-        
+
+        private bool wykonana = false;
+
         public bool Wykonaj()
         {
-            try
+            if (!wykonana)
             {
-                _dataOperacji = DateTime.Now;
-                _kredyt.RachunekPowiazany.__Saldo -= _kwota;
-                _kredyt.__Saldo -= _kwota;
-                return true;
-            }
-            catch
-            {
-                //TODO
+                wykonana = true;
+                try
+                {
+                    _dataOperacji = DateTime.Now;
+                    _kredyt.RachunekPowiazany.__Saldo -= _kwota;
+                    _kredyt.__Saldo -= _kwota;
+                    return true;
+                }
+                catch
+                {
+                    //TODO
+                }
+                return false;
             }
             return false;
         }
