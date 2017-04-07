@@ -62,6 +62,7 @@
     <Compile Include="Interfejsy\Operacje\IWyplata.cs" />
     <Compile Include="Interfejsy\IWłaściciel.cs" />
     <Compile Include="Interfejsy\Operacje\ILogOperacji.cs" />
+    <Compile Include="MechanizmyOdsetkowe\ProgowyMechanizmOdestkowyA.cs" />
     <Compile Include="MenadżerRaportów.cs" />
     <Compile Include="Interfejsy\Operacje\IOperacjaBankowa.cs" />
     <Compile Include="Bank.cs" />
