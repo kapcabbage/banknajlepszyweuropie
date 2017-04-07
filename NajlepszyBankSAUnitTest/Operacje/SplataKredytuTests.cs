@@ -132,6 +132,9 @@ namespace NajlepszyBankSA.Tests
                 }
             }
 
+           
+
+
             public decimal Saldo
             {
                 get;
@@ -139,6 +142,19 @@ namespace NajlepszyBankSA.Tests
             }
 
             public IWłaściciel Właściciel
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+
+                set
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
+            public IMechanizmOdsetkowy MechanizmOdsetkowy
             {
                 get
                 {

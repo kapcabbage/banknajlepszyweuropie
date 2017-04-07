@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NajlepszyBankSA;
 using NajlepszyBankSA.Interfejsy;
+using NajlepszyBankSA.MechanizmyOdsetkowe;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,7 +13,7 @@ namespace NajlepszyBankSA.Tests
     [TestClass()]
     public class BazowyMechanizmOdsetkowyTests
     {
-        private BazowyMechanizmOdsetkowy _mechanizm;
+        private IMechanizmOdsetkowy _mechanizm;
         private RachunekMock _rachunek;
         private class RachunekMock : IProdukt
         {
@@ -96,14 +97,14 @@ namespace NajlepszyBankSA.Tests
         {
             _rachunek = new RachunekMock();
             _rachunek.Saldo = 1000;
-            _mechanizm = new BazowyMechanizmOdsetkowy(_rachunek, -2);
+            _mechanizm = new ProgowyMechanizmOdestkowyA(_rachunek);
         }
 
         [TestMethod()]
         public void MechanizmOdsetkowyNaliczanieOdsetek()
         {
             _mechanizm.Nalicz();
-            Assert.IsTrue(_rachunek.Saldo == 980M);
+            Assert.IsTrue(_rachunek.Saldo >980);
         }
     }
 }
