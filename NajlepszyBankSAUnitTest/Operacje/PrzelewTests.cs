@@ -20,9 +20,9 @@ namespace NajlepszyBankSA.Tests
         public void Init()
         {
             _rachunek1 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
-            _rachunek1.Saldo = 1000M;
+            _rachunek1.__Saldo = 1000M;
             _rachunek2 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
-            _rachunek2.Saldo = 2000M;
+            _rachunek2.__Saldo = 2000M;
         }
 
         [TestMethod()]
@@ -30,8 +30,8 @@ namespace NajlepszyBankSA.Tests
         {
             _przelew = new Przelew(_rachunek1, _rachunek2, 2000);
             Assert.IsFalse(_przelew.Wykonaj());
-            Assert.AreEqual(_rachunek1.Saldo, 1000M);
-            Assert.AreEqual(_rachunek2.Saldo, 2000M);
+            Assert.AreEqual(_rachunek1.__Saldo, 1000M);
+            Assert.AreEqual(_rachunek2.__Saldo, 2000M);
         }
 
         [TestMethod()]
@@ -39,8 +39,8 @@ namespace NajlepszyBankSA.Tests
         {
             _przelew = new Przelew(_rachunek1, _rachunek2, 1000);
             Assert.IsTrue(_przelew.Wykonaj());
-            Assert.AreEqual(_rachunek1.Saldo, 0M);
-            Assert.AreEqual(_rachunek2.Saldo, 3000M);
+            Assert.AreEqual(_rachunek1.__Saldo, 0M);
+            Assert.AreEqual(_rachunek2.__Saldo, 3000M);
         }
 
         private class BankMock : IBank

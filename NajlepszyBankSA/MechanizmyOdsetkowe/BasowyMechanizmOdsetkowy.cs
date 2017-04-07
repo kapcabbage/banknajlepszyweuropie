@@ -35,7 +35,7 @@ namespace NajlepszyBankSA
         {
             _ostatnieNaliczenie = DateTime.Now;
             this._procent = this.ObliczProcent();
-            _rachunek.Saldo += (_procent/100) * _rachunek.Saldo;
+            _rachunek.__Saldo += (_procent/100) * _rachunek.__Saldo;
         }
 
 

@@ -18,7 +18,7 @@ namespace NajlepszyBankSA
 
 
 
-        new public decimal Saldo
+        new public decimal __Saldo
         {
             get
             {

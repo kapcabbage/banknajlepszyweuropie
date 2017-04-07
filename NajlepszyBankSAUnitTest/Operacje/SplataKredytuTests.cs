@@ -28,11 +28,11 @@ namespace NajlepszyBankSA.Tests
         [TestMethod()]
         public void SpłataKredytuWykonanie()
         {
-            _kredyt.Saldo = 2000M;
-            _rachunek.Saldo = 1000M;
+            _kredyt.__Saldo = 2000M;
+            _rachunek.__Saldo = 1000M;
             _splata.Wykonaj();
-            Assert.AreEqual(_kredyt.Saldo, 1000M);
-            Assert.AreEqual(_rachunek.Saldo, 0M);
+            Assert.AreEqual(_kredyt.__Saldo, 1000M);
+            Assert.AreEqual(_rachunek.__Saldo, 0M);
         }
 
         private class KredytMock : IKredyt
@@ -64,7 +64,7 @@ namespace NajlepszyBankSA.Tests
                 set;
             }
 
-            public decimal Saldo
+            public decimal __Saldo
             {
                 get;
                 set;
@@ -135,7 +135,7 @@ namespace NajlepszyBankSA.Tests
            
 
 
-            public decimal Saldo
+            public decimal __Saldo
             {
                 get;
                 set;

@@ -24,7 +24,7 @@ namespace NajlepszyBankSA.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void SaldoKredytuPoniżejZera()
         {
-            _kredyt.Saldo -= 2000M;
+            _kredyt.__Saldo -= 2000M;
         }
 
         private class WłaścicielMock : IWłaściciel

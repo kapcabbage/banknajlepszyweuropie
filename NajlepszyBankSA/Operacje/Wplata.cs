@@ -84,7 +84,7 @@ namespace NajlepszyBankSA
             try
             {
                 _dataOperacji = DateTime.Now;
-                _rachunekWykonujacy.Saldo += _kwota;
+                _rachunekWykonujacy.__Saldo += _kwota;
                 return true;
             }
             catch

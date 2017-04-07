@@ -65,7 +65,7 @@ namespace NajlepszyBankSA.Tests
                 }
             }
 
-            public decimal Saldo
+            public decimal __Saldo
             {
                 get
                 {
@@ -96,7 +96,7 @@ namespace NajlepszyBankSA.Tests
         public void Init()
         {
             _rachunek = new RachunekMock();
-            _rachunek.Saldo = 1000;
+            _rachunek.__Saldo = 1000;
             _mechanizm = new ProgowyMechanizmOdestkowyA(_rachunek);
         }
 
@@ -104,7 +104,7 @@ namespace NajlepszyBankSA.Tests
         public void MechanizmOdsetkowyNaliczanieOdsetek()
         {
             _mechanizm.Nalicz();
-            Assert.IsTrue(_rachunek.Saldo >980);
+            Assert.IsTrue(_rachunek.__Saldo >980);
         }
     }
 }

@@ -72,8 +72,8 @@ namespace NajlepszyBankSA
             try
             {
                 _dataOperacji = DateTime.Now;
-                _kredyt.RachunekPowiazany.Saldo -= _kwota;
-                _kredyt.Saldo -= _kwota;
+                _kredyt.RachunekPowiazany.__Saldo -= _kwota;
+                _kredyt.__Saldo -= _kwota;
                 return true;
             }
             catch

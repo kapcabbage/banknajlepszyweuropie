@@ -19,22 +19,22 @@ namespace NajlepszyBankSA.Tests
         public void init()
         {
             _rachunek = new Rachunek(Guid.NewGuid(), new WłaśicielMock(), new BankMock());
-            _rachunek.Saldo = 1000M;
+            _rachunek.__Saldo = 1000M;
             _rachunek.DopuszczalnyDebet = 1000M;
         }
 
         [TestMethod()]
         public void WypłataZDopuszczalnymDebetem()
         {
-            _rachunek.Saldo -= 2000M;
-            Assert.IsTrue(_rachunek.Saldo == -1000M);
+            _rachunek.__Saldo -= 2000M;
+            Assert.IsTrue(_rachunek.__Saldo == -1000M);
         }
 
         [TestMethod()]
         [ExpectedException(typeof(InvalidOperationException))]
         public void WypłataPrzekraczającaDebet()
         {
-            _rachunek.Saldo -= 3000M;
+            _rachunek.__Saldo -= 3000M;
         }
 
         private class WłaśicielMock : IWłaściciel

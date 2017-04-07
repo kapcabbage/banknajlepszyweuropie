@@ -20,11 +20,11 @@ namespace NajlepszyBankSA.MechanizmyOdsetkowe
         {
             decimal procent = 0;
 
-            if (_rachunek.Saldo < _PROG1)
+            if (_rachunek.__Saldo < _PROG1)
                 procent = 1;
-            else if (_rachunek.Saldo >= _PROG1 && _rachunek.Saldo < _PROG2)
+            else if (_rachunek.__Saldo >= _PROG1 && _rachunek.__Saldo < _PROG2)
                 procent = 2;
-            else if (_rachunek.Saldo >= _PROG2)
+            else if (_rachunek.__Saldo >= _PROG2)
                 procent = 3;
 
             return procent;

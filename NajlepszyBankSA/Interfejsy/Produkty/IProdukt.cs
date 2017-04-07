@@ -9,7 +9,7 @@ namespace NajlepszyBankSA.Interfejsy
     public interface IProdukt
     {
 
-        decimal Saldo
+        decimal __Saldo
         {
             get;
             set;

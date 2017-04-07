@@ -24,7 +24,7 @@ namespace NajlepszyBankSA.Tests
         [ExpectedException(typeof(InvalidOperationException))]
         public void LokataSaldoNieMożnaModyfikować()
         {
-            _lokata.Saldo -= 100M;
+            _lokata.__Saldo -= 100M;
         }
 
         private class WłaścicielMock : IWłaściciel

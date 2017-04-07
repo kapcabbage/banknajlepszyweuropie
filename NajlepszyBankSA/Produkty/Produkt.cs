@@ -17,7 +17,7 @@ namespace NajlepszyBankSA
         protected IWłaściciel _właściciel;
         protected IBank _bank;
 
-        public decimal Saldo
+        public decimal __Saldo
         {
             get
             {
