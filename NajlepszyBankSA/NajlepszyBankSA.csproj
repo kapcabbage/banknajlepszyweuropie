@@ -68,7 +68,7 @@
     <Compile Include="Interfejsy\Produkty\IProdukt.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />
-    <Compile Include="MechanizmyOdsetkowe\MechanizmOdsetkowy.cs" />
+    <Compile Include="MechanizmyOdsetkowe\BasowyMechanizmOdsetkowy.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="KontoKlienta.cs" />
     <Compile Include="Program.cs" />
