@@ -10,8 +10,19 @@ namespace NajlepszyBankSA
     public class Rachunek : Produkt, IRachunek
     {
         protected decimal _dopuszczalnyDebet;
+        protected IMechanizmOdsetkowy _mechanizm;
 
-
+        public IMechanizmOdsetkowy MechanizmOdsetkowy
+        {
+            get
+            {
+                return _mechanizm;
+            }
+            set
+            {
+                _mechanizm = value ;
+            }
+        }
         public decimal DopuszczalnyDebet
         {
             get
@@ -43,6 +54,7 @@ namespace NajlepszyBankSA
         
         public Rachunek(Guid numer, IWłaściciel właściciel, IBank bank) : base(numer, właściciel, bank) 
         {
+           
         }
 
     }

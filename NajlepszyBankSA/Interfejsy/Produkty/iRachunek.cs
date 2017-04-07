@@ -13,6 +13,13 @@ namespace NajlepszyBankSA.Interfejsy
             get;
             set;
         }
+
+        IMechanizmOdsetkowy MechanizmOdsetkowy
+        {
+            get;
+            set;
+        }
+
         decimal DopuszczalnyDebet
         {
             get;
