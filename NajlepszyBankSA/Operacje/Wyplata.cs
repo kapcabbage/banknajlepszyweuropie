@@ -7,7 +7,7 @@ using NajlepszyBankSA.Interfejsy;
 
 namespace NajlepszyBankSA
 {
-    public class Wyplata : IWyplata
+    public class Wyplata: IWyplata
     {
 
         protected decimal _kwota;
@@ -24,7 +24,7 @@ namespace NajlepszyBankSA
 
             set
             {
-                _rachunekWykonujacy = (IRachunek)value;
+                _rachunekWykonujacy = (IRachunek) value;
             }
         }
         public DateTime DataOperacji
@@ -65,7 +65,7 @@ namespace NajlepszyBankSA
         {
             get
             {
-               return _rachunekWykonujacy;
+                return _rachunekWykonujacy;
             }
 
             set
@@ -74,23 +74,30 @@ namespace NajlepszyBankSA
             }
         }
 
-        public Wyplata(IRachunek rachunekWykonujacy,decimal kwota)
+        public Wyplata(IRachunek rachunekWykonujacy, decimal kwota)
         {
             _rachunekWykonujacy = rachunekWykonujacy;
-            _kwota = kwota; 
+            _kwota = kwota;
         }
+
+        private bool wykonana = false;
 
         public bool Wykonaj()
         {
-            try
+            if (!wykonana)
             {
-                _dataOperacji = DateTime.Now;
-                _rachunekWykonujacy.__Saldo -= _kwota;
-                return true;
-            }
-            catch
-            {
-                //TODO
+                wykonana = true;
+                try
+                {
+                    _dataOperacji = DateTime.Now;
+                    _rachunekWykonujacy.__Saldo -= _kwota;
+                    return true;
+                }
+                catch
+                {
+                    //TODO
+                }
+                return false;
             }
             return false;
         }

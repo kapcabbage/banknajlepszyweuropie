@@ -95,20 +95,28 @@ namespace NajlepszyBankSA
             _kwota = kwota;
         }
 
+
+        private bool wykonana = false;
+
         public bool Wykonaj()
         {
-            try
+            if (!wykonana)
             {
-                _dataOperacji = DateTime.Now;
-                _rachunekWykonujący.__Saldo -= _kwota;
-                _rachunekDocelowy.__Saldo += _kwota;
-            }
-            catch
-            {
-                return false;
-            }
+                wykonana = true;
+                try
+                {
+                    _dataOperacji = DateTime.Now;
+                    _rachunekWykonujący.__Saldo -= _kwota;
+                    _rachunekDocelowy.__Saldo += _kwota;
+                }
+                catch
+                {
+                    return false;
+                }
 
-            return true;
+                return true;
+            }
+            return false;
         }
     }
 }
