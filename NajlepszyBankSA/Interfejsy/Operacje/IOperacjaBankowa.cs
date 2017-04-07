@@ -28,5 +28,7 @@ namespace NajlepszyBankSA
         }
 
         bool Wykonaj();
+
+
     }
 }

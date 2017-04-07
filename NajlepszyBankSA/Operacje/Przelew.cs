@@ -110,5 +110,7 @@ namespace NajlepszyBankSA
 
             return true;
         }
+
+
     }
 }

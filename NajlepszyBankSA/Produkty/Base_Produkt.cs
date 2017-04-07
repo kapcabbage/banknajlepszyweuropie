@@ -97,6 +97,11 @@ namespace NajlepszyBankSA
             _dataZałożenia = DateTime.Now;
             _historia = new HistoriaOperacji();
         }
+
+        public void WykonajOperacje(IOperacjaBankowa Operacja)
+        {
+            Operacja.Wykonaj();
+        }
         
     }
 }

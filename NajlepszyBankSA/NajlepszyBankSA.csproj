@@ -70,13 +70,13 @@
     <Compile Include="MechanizmyOdsetkowe\NieliniowyMechanizmOdsetkowy.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />
-    <Compile Include="MechanizmyOdsetkowe\BasowyMechanizmOdsetkowy.cs" />
+    <Compile Include="MechanizmyOdsetkowe\Base_MechanizmOdsetkowy.cs" />
     <Compile Include="Osoba.cs" />
     <Compile Include="KontoKlienta.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Operacje\Przelew.cs" />
-    <Compile Include="Produkty\Produkt.cs" />
+    <Compile Include="Produkty\Base_Produkt.cs" />
     <Compile Include="Produkty\Rachunek.cs" />
     <Compile Include="Operacje\SplataKredytu.cs" />
     <Compile Include="Operacje\Wplata.cs" />
