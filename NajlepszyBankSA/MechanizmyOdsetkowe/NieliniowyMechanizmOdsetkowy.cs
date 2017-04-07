@@ -9,14 +9,14 @@ namespace NajlepszyBankSA
 {
     public class NieliniowyMechanizmOdsetkowy : BazowyMechanizmOdsetkowy
     {
-       public NieliniowyMechanizmOdsetkowy(IProdukt rachunek, decimal procent) : base (rachunek,procent)
+       public NieliniowyMechanizmOdsetkowy(IProdukt rachunek) : base (rachunek)
        {
 
        }
 
-        protected override void ObliczProcent()
+        protected override decimal ObliczProcent()
         {
-            
+            return 0;
         }
 
     }
