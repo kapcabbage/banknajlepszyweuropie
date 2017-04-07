@@ -12,18 +12,22 @@ namespace NajlepszyBankSA.MechanizmyOdsetkowe
         private readonly int _PROG1 = 1000;
         private readonly int _PROG2 = 5000;
 
-        public ProgowyMechanizmOdestkowyA(IProdukt rachunek, decimal procent) : base(rachunek, procent)
+        public ProgowyMechanizmOdestkowyA(IProdukt rachunek) : base(rachunek)
         {
         }
 
-        protected override void ObliczProcent()
+        protected override decimal ObliczProcent()
         {
+            decimal procent = 0;
+
             if (_rachunek.Saldo < _PROG1)
-                _procent = 1;
+                procent = 1;
             else if (_rachunek.Saldo >= _PROG1 && _rachunek.Saldo < _PROG2)
-                _procent = 2;
+                procent = 2;
             else if (_rachunek.Saldo >= _PROG2)
-                _procent = 3;
+                procent = 3;
+
+            return procent;
         }
     }
 }

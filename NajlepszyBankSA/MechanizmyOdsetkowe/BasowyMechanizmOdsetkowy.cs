@@ -11,7 +11,7 @@ namespace NajlepszyBankSA
     {
         protected DateTime _ostatnieNaliczenie;
         protected IProdukt _rachunek;
-        protected decimal _procent;
+        private decimal _procent;
 
         public DateTime OstatnieNaliczenie
         {
@@ -26,21 +26,20 @@ namespace NajlepszyBankSA
             }
         }
 
-        public BazowyMechanizmOdsetkowy(IProdukt rachunek, decimal procent)
+        public BazowyMechanizmOdsetkowy(IProdukt rachunek)
         {
             _rachunek = rachunek;
-            _procent = procent;
         }
 
         public void Nalicz()
         {
             _ostatnieNaliczenie = DateTime.Now;
-            this.ObliczProcent();
+            this._procent = this.ObliczProcent();
             _rachunek.Saldo += (_procent/100) * _rachunek.Saldo;
         }
 
 
-        protected abstract void ObliczProcent();
+        protected abstract decimal ObliczProcent();
 
     }
 }
