@@ -66,6 +66,7 @@
     <Compile Include="Interfejsy\Operacje\IOperacjaBankowa.cs" />
     <Compile Include="Bank.cs" />
     <Compile Include="Interfejsy\Produkty\IProdukt.cs" />
+    <Compile Include="NieliniowyMechanizmOdsetkowy.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />
     <Compile Include="MechanizmOdsetkowy.cs" />
