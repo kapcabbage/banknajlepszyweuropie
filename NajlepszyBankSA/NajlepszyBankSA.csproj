@@ -85,6 +85,7 @@
     <Compile Include="Operacje\SplataKredytu.cs" />
     <Compile Include="Operacje\Wplata.cs" />
     <Compile Include="Operacje\Wyplata.cs" />
+    <Compile Include="SystemPrzelewówMiędzybankowych.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Anger-Management.xls" />

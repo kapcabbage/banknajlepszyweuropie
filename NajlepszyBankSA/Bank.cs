@@ -11,6 +11,8 @@ namespace NajlepszyBankSA
     {
         protected List<KontoKlienta> _konta;
         protected HistoriaOperacji _historia;
+        protected ISystemPrzelewówMiędzybankowych _systemPrzelewow;
+
 
         public void stworzPospolitegoKlienta(string imie, string nazwisko, string pesel)
         {
@@ -27,9 +29,21 @@ namespace NajlepszyBankSA
 
         public void Wykonaj(IOperacjaBankowa operacja)
         {
-            operacja.Wykonaj();
-            _historia.Operacje.Add(operacja);
-            operacja.RachunekWykonujący.Historia.Operacje.Add(operacja);
+            if(operacja is IPrzelew)
+            {
+                if(((IPrzelew)operacja).RachunekDocelowy.Bank != this)
+                {
+                    _systemPrzelewow.WykonajJeden((IPrzelew)operacja);
+                }
+                else if (((IPrzelew)operacja).RachunekDocelowy.Bank == this)
+                {
+                    operacja.Wykonaj(); 
+                }
+                _historia.Operacje.Add(operacja);
+                operacja.RachunekWykonujący.Historia.Operacje.Add(operacja);
+            }
+
+           
         }
     }
 }
