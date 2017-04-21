@@ -51,6 +51,8 @@
     <Compile Include="Interfejsy\IBank.cs" />
     <Compile Include="Interfejsy\IHistoriaOperacji.cs" />
     <Compile Include="Interfejsy\IKontoKlienta.cs" />
+    <Compile Include="Interfejsy\ISystemPrzelewówMiędzybankowych.cs" />
+    <Compile Include="Interfejsy\Operacje\IOperacjaMiędzybankowa.cs" />
     <Compile Include="Interfejsy\Produkty\IKredyt.cs" />
     <Compile Include="Interfejsy\Produkty\ILokata.cs" />
     <Compile Include="Interfejsy\IMechanizmOdsetkowy.cs" />
