@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy
 {
-    interface ISystemPrzelewówMiędzybankowych
+    public interface ISystemPrzelewówMiędzybankowych
     {
         void WykonajWiele(ICollection<IPrzelew> lista);
         void WykonajJeden(IPrzelew przelew);
