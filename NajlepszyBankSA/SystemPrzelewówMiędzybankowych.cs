@@ -1,4 +1,5 @@
 ﻿using NajlepszyBankSA.Interfejsy;
+using NajlepszyBankSA.Interfejsy.Operacje;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,24 @@ namespace NajlepszyBankSA
 {
     public class SystemPrzelewówMiędzybankowych : ISystemPrzelewówMiędzybankowych
     {
-        public void WykonajWiele(ICollection<IPrzelew> )
+        protected List<IBank> _banki;
+
+        public void WykonajJeden(IOperacjaMiędzybankowa operacja)
         {
-            throw new NotImplementedException();
+            operacja.BankNadawcy.Wykonaj((IOperacjaBankowa)operacja);
+        }
+
+        public void WykonajWiele(ICollection<IOperacjaMiędzybankowa> lista)
+        {
+            foreach(IOperacjaMiędzybankowa operacja in lista)
+            {
+                operacja.BankNadawcy.Wykonaj((IOperacjaBankowa)operacja);
+            }
+        }
+
+        public void ZarejestrujBank(IBank bank)
+        {
+            _banki.Add(bank);
         }
     }
 }
