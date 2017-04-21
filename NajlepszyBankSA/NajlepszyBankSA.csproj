@@ -86,6 +86,7 @@
     <Compile Include="Operacje\Wyplata.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Anger-Management.xls" />
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
