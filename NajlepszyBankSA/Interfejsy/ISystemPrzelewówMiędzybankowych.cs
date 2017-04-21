@@ -8,9 +8,9 @@ namespace NajlepszyBankSA.Interfejsy
 {
     interface ISystemPrzelewówMiędzybankowych
     {
-        void WykonajWiele(ICollection<IPrzelew>)
-        {
+        void WykonajWiele(ICollection<IPrzelew> lista);
+        void WykonajJeden(IPrzelew przelew);
+        void ZarejestrujBank(IBank bank);
 
-        }
     }
 }
