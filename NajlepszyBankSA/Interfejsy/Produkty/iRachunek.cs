@@ -20,10 +20,14 @@ namespace NajlepszyBankSA.Interfejsy
             set;
         }
 
-        decimal DopuszczalnyDebet
-        {
-            get;
-            set;
-        }
+        //decimal DopuszczalnyDebet
+        //{
+        //    get;
+        //    set;
+        //}
+
+        void Wplac(decimal kwota);
+        void Pobierz(decimal kwota);
+        
     }
 }

@@ -90,7 +90,8 @@ namespace NajlepszyBankSA
                 try
                 {
                     _dataOperacji = DateTime.Now;
-                    _rachunekWykonujacy.__Saldo -= _kwota;
+                    _rachunekWykonujacy.Pobierz(_kwota);
+                    //_rachunekWykonujacy.__Saldo -= _kwota;
                     return true;
                 }
                 catch

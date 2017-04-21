@@ -9,7 +9,7 @@ namespace NajlepszyBankSA
 {
     public class Rachunek : Produkt, IRachunek
     {
-        protected decimal _dopuszczalnyDebet;
+        //protected decimal _dopuszczalnyDebet;
         protected IMechanizmOdsetkowy _mechanizm;
 
         public IMechanizmOdsetkowy MechanizmOdsetkowy
@@ -23,39 +23,53 @@ namespace NajlepszyBankSA
                 _mechanizm = value ;
             }
         }
-        public decimal DopuszczalnyDebet
-        {
-            get
-            {
-                return _dopuszczalnyDebet;
-            }
+        //public decimal DopuszczalnyDebet
+        //{
+        //    get
+        //    {
+        //        return _dopuszczalnyDebet;
+        //    }
 
-            set
-            {
-                _dopuszczalnyDebet = value;
-            }
+        //    set
+        //    {
+        //        _dopuszczalnyDebet = value;
+        //    }
+        //}
+
+        //new public decimal __Saldo
+        //{
+        //    get
+        //    {
+        //        return _saldo;
+        //    }
+        //    set
+        //    {
+        //        if(value < -1 * _dopuszczalnyDebet)
+        //        {
+        //            throw new InvalidOperationException();
+        //        }
+        //        _saldo = value;
+        //    }
+        //}
+
+        public void Wplac(decimal kwota)
+        {
+            this._saldo += kwota;
         }
 
-        new public decimal __Saldo
+        public void Pobierz(decimal kwota)
         {
-            get
-            {
-                return _saldo;
-            }
-            set
-            {
-                if(value < -1 * _dopuszczalnyDebet)
-                {
-                    throw new InvalidOperationException();
-                }
-                _saldo = value;
-            }
+            if (this._saldo >= kwota)
+                _saldo -= kwota;
+            else
+                throw new InvalidOperationException("Żądana kwota wypłaty przekracza stan salda.");
         }
-        
+
         public Rachunek(Guid numer, IWłaściciel właściciel, IBank bank) : base(numer, właściciel, bank) 
         {
            
         }
+
 
     }
 }
