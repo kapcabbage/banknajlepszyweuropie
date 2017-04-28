@@ -15,6 +15,10 @@ namespace NajlepszyBankSA
         protected string _opis;
         protected IRachunek _rachunekWykonujacy;
 
+        public void accept(IVisitor visitor)
+        {
+            visitor.visit(this);
+        }
         IProdukt IOperacjaBankowa.RachunekWykonujący
         {
             get

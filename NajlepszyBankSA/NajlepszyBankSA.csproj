@@ -48,10 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="HistoriaOperacji.cs" />
+    <Compile Include="Interfejsy\IVisitor.cs" />
     <Compile Include="Interfejsy\IBank.cs" />
     <Compile Include="Interfejsy\IHistoriaOperacji.cs" />
     <Compile Include="Interfejsy\IKontoKlienta.cs" />
     <Compile Include="Interfejsy\ISystemPrzelewówMiędzybankowych.cs" />
+    <Compile Include="Interfejsy\IVisitable.cs" />
     <Compile Include="Interfejsy\Operacje\IOperacjaMiędzybankowa.cs" />
     <Compile Include="Interfejsy\Produkty\IKredyt.cs" />
     <Compile Include="Interfejsy\Produkty\ILokata.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="Bank.cs" />
     <Compile Include="Interfejsy\Produkty\IProdukt.cs" />
     <Compile Include="MechanizmyOdsetkowe\NieliniowyMechanizmOdsetkowy.cs" />
+    <Compile Include="Odwiedzajacy\Visitor.cs" />
     <Compile Include="Operacje\PrzelewMiędzybankowy.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />

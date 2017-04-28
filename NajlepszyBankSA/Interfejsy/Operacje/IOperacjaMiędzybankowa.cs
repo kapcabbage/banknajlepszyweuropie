@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Interfejsy.Operacje
 {
-    public interface IOperacjaMiędzybankowa
+    public interface IOperacjaMiędzybankowa 
     {
         IBank BankNadawcy
         {

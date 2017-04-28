@@ -19,7 +19,10 @@ namespace NajlepszyBankSA
             _kwota = kwota;
         }
 
-
+        public void accept(IVisitor visitor)
+        {
+            visitor.visit(this);
+        }
         public DateTime DataOperacji
         {
             get

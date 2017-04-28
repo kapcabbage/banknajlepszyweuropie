@@ -15,6 +15,11 @@ namespace NajlepszyBankSA
         protected DateTime _dataOperacji;
 
 
+        public void accept(IVisitor visitor)
+        {
+            visitor.visit(this);
+        }
+
         IProdukt IOperacjaBankowa.RachunekWykonujący
         {
             get

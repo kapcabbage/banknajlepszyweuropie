@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA
 {
-    public interface IOperacjaBankowa : ILogOperacji
+    public interface IOperacjaBankowa : ILogOperacji, IVisitable
     {
         IProdukt RachunekWykonujący
         {
