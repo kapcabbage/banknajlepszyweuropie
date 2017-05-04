@@ -76,7 +76,6 @@ namespace NajlepszyBankSA
         {
             if (!wykonana)
             {
-                wykonana = true;
                 try
                 {
                     _dataOperacji = DateTime.Now;
@@ -88,6 +87,7 @@ namespace NajlepszyBankSA
                 {
                     //TODO
                 }
+                wykonana = true;
                 return false;
             }
             return false;

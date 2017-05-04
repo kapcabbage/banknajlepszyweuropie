@@ -117,7 +117,7 @@ namespace NajlepszyBankSA.Operacje
             }
         }
 
-        public PrzelewMiędzybankowy(Rachunek rachunekZ, Rachunek rachunekNa, decimal kwota)
+        public PrzelewMiędzybankowy(IRachunek rachunekZ, IRachunek rachunekNa, decimal kwota)
         {
             _rachunekDocelowy = rachunekNa;
             _rachunekWykonujący = rachunekZ;

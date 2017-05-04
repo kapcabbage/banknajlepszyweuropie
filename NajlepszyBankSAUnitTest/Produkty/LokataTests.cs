@@ -113,6 +113,11 @@ namespace NajlepszyBankSA.Tests
 
         private class BankMock : IBank
         {
+            public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
+            {
+                throw new NotImplementedException();
+            }
+
             public void Wykonaj(IOperacjaBankowa operacja)
             {
                 throw new NotImplementedException();

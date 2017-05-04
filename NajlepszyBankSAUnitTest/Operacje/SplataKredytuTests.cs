@@ -166,6 +166,16 @@ namespace NajlepszyBankSA.Tests
                     throw new NotImplementedException();
                 }
             }
+
+            public void Wplac(decimal kwota)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void Pobierz(decimal kwota)
+            {
+                throw new NotImplementedException();
+            }
         }
     }
 }

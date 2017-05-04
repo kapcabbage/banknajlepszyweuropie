@@ -1,5 +1,6 @@
 ﻿using NajlepszyBankSA.Interfejsy;
 using NajlepszyBankSA.Interfejsy.Operacje;
+using NajlepszyBankSA.Operacje;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -37,7 +38,8 @@ namespace NajlepszyBankSA
 
         public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
         {
-            throw new NotImplementedException();
+            PrzelewMiędzybankowy przelewMiędzybankowy = new PrzelewMiędzybankowy(podstawa.RachunekWykonujący, podstawa.RachunekDocelowy, podstawa.Kwota);
+            _systemPrzelewow.WykonajJeden(przelewMiędzybankowy);
         }
     }
 }

@@ -15,13 +15,15 @@ namespace NajlepszyBankSA.Tests
         private Przelew _przelew;
         private Rachunek _rachunek1;
         private Rachunek _rachunek2;
+        private IBank _bank;
 
         [TestInitialize]
         public void Init()
         {
-            _rachunek1 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
+
+            _rachunek1 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), _bank = new BankMock());
             _rachunek1.__Saldo = 1000M;
-            _rachunek2 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), new BankMock());
+            _rachunek2 = new Rachunek(Guid.NewGuid(), new WłaścicielMock(), _bank);
             _rachunek2.__Saldo = 2000M;
         }
 
@@ -45,6 +47,11 @@ namespace NajlepszyBankSA.Tests
 
         private class BankMock : IBank
         {
+            public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
+            {
+                throw new NotImplementedException();
+            }
+
             public void Wykonaj(IOperacjaBankowa operacja)
             {
                 throw new NotImplementedException();
