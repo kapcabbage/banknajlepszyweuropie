@@ -9,5 +9,7 @@ namespace NajlepszyBankSA.Interfejsy
     public interface IBank
     {
         void Wykonaj(IOperacjaBankowa operacja);
+
+        void NadajPrzelewMiędzybankowy(IPrzelew podstawa);
     }
 }

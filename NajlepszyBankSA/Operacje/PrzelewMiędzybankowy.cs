@@ -1,4 +1,5 @@
 ﻿using NajlepszyBankSA.Interfejsy;
+using NajlepszyBankSA.Interfejsy.Operacje;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace NajlepszyBankSA.Operacje
 {
-    public class PrzelewMiędzybankowy : IPrzelew
+    public class PrzelewMiędzybankowy : IPrzelew, IOperacjaMiędzybankowa
     {
         protected IRachunek _rachunekDocelowy;
         protected IRachunek _rachunekWykonujący;
@@ -90,6 +91,32 @@ namespace NajlepszyBankSA.Operacje
             }
         }
 
+        public IBank BankNadawcy
+        {
+            get
+            {
+                return _bankWykonujący;
+            }
+
+            set
+            {
+                _bankWykonujący = value;
+            }
+        }
+
+        public IBank BankOdbiorcy
+        {
+            get
+            {
+                return _bankDocelowy;
+            }
+
+            set
+            {
+                _bankDocelowy = value;
+            }
+        }
+
         public PrzelewMiędzybankowy(Rachunek rachunekZ, Rachunek rachunekNa, decimal kwota)
         {
             _rachunekDocelowy = rachunekNa;
@@ -106,21 +133,24 @@ namespace NajlepszyBankSA.Operacje
         {
             if (!wykonana)
             {
-                wykonana = true;
                 try
                 {
                     _dataOperacji = DateTime.Now;
-                    _rachunekWykonujący.Pobierz(_kwota);
                     _rachunekDocelowy.Wplac(_kwota);
                 }
                 catch
                 {
                     return false;
                 }
-
+                wykonana = true;
                 return true;
             }
             return false;
+        }
+
+        public void accept(IVisitor visitor)
+        {
+            throw new NotImplementedException();
         }
     }
 }

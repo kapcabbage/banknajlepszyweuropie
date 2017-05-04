@@ -1,4 +1,5 @@
 ﻿using NajlepszyBankSA.Interfejsy;
+using NajlepszyBankSA.Interfejsy.Operacje;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,21 +30,14 @@ namespace NajlepszyBankSA
 
         public void Wykonaj(IOperacjaBankowa operacja)
         {
-            if(operacja is IPrzelew)
-            {
-                if(((IPrzelew)operacja).RachunekDocelowy.Bank != this)
-                {
-                    _systemPrzelewow.WykonajJeden((IPrzelew)operacja);
-                }
-                else if (((IPrzelew)operacja).RachunekDocelowy.Bank == this)
-                {
-                    operacja.Wykonaj(); 
-                }
-                _historia.Operacje.Add(operacja);
-                operacja.RachunekWykonujący.Historia.Operacje.Add(operacja);
-            }
+            operacja.Wykonaj(); 
+            _historia.Operacje.Add(operacja);
+            operacja.RachunekWykonujący.Historia.Operacje.Add(operacja);
+        }
 
-           
+        public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
+        {
+            throw new NotImplementedException();
         }
     }
 }

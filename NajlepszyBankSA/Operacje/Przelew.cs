@@ -107,7 +107,10 @@ namespace NajlepszyBankSA
         {
             if (!wykonana)
             {
-                wykonana = true;
+                if(_rachunekDocelowy.Bank != _rachunekWykonujący.Bank)
+                {
+                    _rachunekWykonujący.Bank.NadajPrzelewMiędzybankowy(this);
+                }
                 try
                 {
                     _dataOperacji = DateTime.Now;
@@ -118,7 +121,7 @@ namespace NajlepszyBankSA
                 {
                     return false;
                 }
-
+                wykonana = true;
                 return true;
             }
             return false;
