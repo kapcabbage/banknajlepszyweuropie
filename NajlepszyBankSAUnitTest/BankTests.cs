@@ -26,8 +26,6 @@ namespace NajlepszyBankSA.Tests
             _przelew = new PrzelewMock();
             _rachunek1 = new RachunekMock();
             _rachunek2 = new RachunekMock();
-            _rachunek1.Bank = _bank;
-            _rachunek2.Bank = _bankInny;
             _przelew.RachunekDocelowy = _rachunek2;
             _przelew.RachunekWykonujący = _rachunek1;
             _bank.SystemPrzelewów = _system;
@@ -36,9 +34,23 @@ namespace NajlepszyBankSA.Tests
         [TestMethod()]
         public void NadajPrzelewMiędzybankowyBankGenerujePrzelewTest()
         {
+            _rachunek1.Bank = _bank;
+            _rachunek2.Bank = _bankInny;
+
             _bank.NadajPrzelewMiędzybankowy(_przelew);
             Assert.IsNotNull(_system.przelewWykonany);
-            Assert.AreEqual(_system.przelewWykonany.BankOdbiorcy,_bankInny);
+            Assert.AreEqual(_system.przelewWykonany.BankOdbiorcy, _bankInny);
+        }
+
+        [TestMethod()]
+        public void NadajZwrotPrzelewuMiędzybankowegoBankGenerujePrzelewTest()
+        {
+            _rachunek1.Bank = _bankInny;
+            _rachunek2.Bank = _bank;
+
+            _bank.NadajZwrotPrzelewuMiędzybankowego(_przelew);
+            Assert.IsNotNull(_system.przelewWykonany);
+            Assert.AreEqual(_system.przelewWykonany.BankOdbiorcy, _bankInny);
         }
 
 
