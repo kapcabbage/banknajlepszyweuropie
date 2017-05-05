@@ -74,6 +74,7 @@
     <Compile Include="MechanizmyOdsetkowe\NieliniowyMechanizmOdsetkowy.cs" />
     <Compile Include="Odwiedzajacy\Visitor.cs" />
     <Compile Include="Operacje\PrzelewMiędzybankowy.cs" />
+    <Compile Include="Operacje\ZwrotPrzelewuMiędzybankowego.cs" />
     <Compile Include="Produkty\Kredyt.cs" />
     <Compile Include="Produkty\Lokata.cs" />
     <Compile Include="MechanizmyOdsetkowe\Base_MechanizmOdsetkowy.cs" />

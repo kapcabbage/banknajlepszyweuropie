@@ -133,6 +133,10 @@ namespace NajlepszyBankSA.Operacje
         {
             if (!wykonana)
             {
+                if (BankOdbiorcy != _rachunekDocelowy.Bank || !BankOdbiorcy.kontaKlienta.Any(k => k.Produkty.Any(p => p == _rachunekDocelowy)));
+                {
+                    BankOdbiorcy.NadajZwrotPrzelewuMiędzybankowego(this);
+                }
                 try
                 {
                     _dataOperacji = DateTime.Now;

@@ -11,5 +11,12 @@ namespace NajlepszyBankSA.Interfejsy
         void Wykonaj(IOperacjaBankowa operacja);
 
         void NadajPrzelewMiędzybankowy(IPrzelew podstawa);
+
+        void NadajZwrotPrzelewuMiędzybankowego(IPrzelew nieprawidłowyPrzelew);
+
+        IEnumerable<IKontoKlienta> kontaKlienta
+        {
+            get;
+        }
     }
 }

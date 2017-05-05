@@ -47,7 +47,20 @@ namespace NajlepszyBankSA.Tests
 
         private class BankMock : IBank
         {
+            public IEnumerable<IKontoKlienta> kontaKlienta
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
             public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void NadajZwrotPrzelewuMiędzybankowego(IPrzelew nieprawidłowyPrzelew)
             {
                 throw new NotImplementedException();
             }

@@ -15,6 +15,25 @@ namespace NajlepszyBankSA
         protected HistoriaOperacji _historia;
         protected ISystemPrzelewówMiędzybankowych _systemPrzelewow;
 
+        public ISystemPrzelewówMiędzybankowych SystemPrzelewów
+        {
+            get
+            {
+                return _systemPrzelewow;
+            }
+            set
+            {
+                _systemPrzelewow = value;
+            }
+        }
+
+        public IEnumerable<IKontoKlienta> kontaKlienta
+        {
+            get
+            {
+                return _konta;
+            }
+        }
 
         public void stworzPospolitegoKlienta(string imie, string nazwisko, string pesel)
         {
@@ -39,6 +58,11 @@ namespace NajlepszyBankSA
         public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
         {
             PrzelewMiędzybankowy przelewMiędzybankowy = new PrzelewMiędzybankowy(podstawa.RachunekWykonujący, podstawa.RachunekDocelowy, podstawa.Kwota);
+            _systemPrzelewow.WykonajJeden(przelewMiędzybankowy);
+        }
+        public void NadajZwrotPrzelewuMiędzybankowego(IPrzelew nieprawidłowyPrzelew)
+        {
+            ZwrotPrzelewuMiędzybankowego przelewMiędzybankowy = new ZwrotPrzelewuMiędzybankowego(nieprawidłowyPrzelew.RachunekDocelowy, nieprawidłowyPrzelew.RachunekWykonujący, nieprawidłowyPrzelew.Kwota);
             _systemPrzelewow.WykonajJeden(przelewMiędzybankowy);
         }
     }

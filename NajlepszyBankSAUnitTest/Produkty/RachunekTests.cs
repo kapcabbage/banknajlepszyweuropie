@@ -25,13 +25,15 @@ namespace NajlepszyBankSA.Tests
         [TestMethod()]
         public void WypłataZDopuszczalnymDebetem()
         {
-            //TODO
+            _rachunek.Pobierz(1000);
+            Assert.AreEqual(_rachunek.__Saldo, 0M);
         }
 
         [TestMethod()]
+        [ExpectedException(typeof(InvalidOperationException))]
         public void WypłataPrzekraczającaDebet()
         {
-            //TODO
+            _rachunek.Pobierz(2000);
         }
 
         private class WłaśicielMock : IWłaściciel
@@ -120,7 +122,20 @@ namespace NajlepszyBankSA.Tests
 
         private class BankMock : IBank
         {
+            public IEnumerable<IKontoKlienta> kontaKlienta
+            {
+                get
+                {
+                    throw new NotImplementedException();
+                }
+            }
+
             public void NadajPrzelewMiędzybankowy(IPrzelew podstawa)
+            {
+                throw new NotImplementedException();
+            }
+
+            public void NadajZwrotPrzelewuMiędzybankowego(IPrzelew nieprawidłowyPrzelew)
             {
                 throw new NotImplementedException();
             }
